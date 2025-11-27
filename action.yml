@@ -1,0 +1,14 @@
+name: PHP CI Tools
+description: 'To run PHP CI tools in GitHub Actions using a prebuilt Docker image with many popular CI tools installed.'
+inputs:
+  cmd:
+    description: "Command to run inside the PHP CI container"
+    required: true
+branding:
+  icon: 'check-square'
+  color: 'blue'
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.cmd }}
